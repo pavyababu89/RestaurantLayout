@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Restaurants</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body{
+  font-style:'Poppins', sans-serif ;
+  background: #efe8da
+
+  
+}
+.header {
+    font-style: 'Poppins', sans-serif;
+    
+}
+
+/* TOP NAV */
+.top-nav {
+    background:  #B89C65;
+    padding: 14px 0;
+}
+
+.top-nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.top-nav li {
+    cursor: pointer;
+}
+
+.top-nav .active {
+    font-weight: 600;
+}
+
+.main-header {
+    display: flex;              /* 🔥 this is the fix */
+    align-items: center;        /* vertical alignment */
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #ddd1bd;
+    margin-bottom: 20px;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logo img {
+    width: 180px;
+}
+
+.logo span {
+    font-size: 13px;
+    color: #555;
+}
+
+/* SEARCH */
+.search-box {
+    position: relative;
+     margin: 0 40px;
+    width: 800px;          
+    height: 80px; 
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 50px 14px 25px;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    height:70px;
+    
+}
+
+.search-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.search-box input::placeholder {
+    color: black;
+    opacity: 1; /* important for Chrome */
+}
+
+/* ICONS */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header-icons i {
+    font-size: 30px;
+    color: #b5985a;
+    cursor: pointer;
+}
+
+.header-icons img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+/* CARDS */
+/* FULL WIDTH SECTION */
+.hero-image img {
+    width: 100%;
+    height: 420px;        /* adjust if needed */
+    object-fit: cover;   /* keeps image neat */
+    display: block;
+}
+
+.explore {
+  width: 100%;
+  padding: 40px 30px;
+}
+
+.explore h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+/* FULL WIDTH GRID */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  width: 100%;
+}
+
+/* SQUARE CARD */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 65%;
+  object-fit: cover;
+}
+
+/* TEXT */
+.card h3 {
+  font-size: 34px;
+  font-weight: 600;
+  margin: 12px 15px 4px;
+  text-align: center;
+}
+
+.card p {
+  font-size: 24px;
+  color: #666;
+  margin: 0 15px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* FOOTER */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  background-color: #B89C65; /* same gold shade */
+  color: #fff;
+  padding: 60px 80px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-col h3 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.footer-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-line {
+  border: none;
+  height: 2px;
+  background: #fff;
+  margin: 50px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.bottom-col a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.top-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+       
+}
+
+.top-nav ul li a.active {
+    color: #000;       /* active black */
+    font-weight: 600;
+}
+/* =========================
+   TABLET (max-width: 1024px)
+========================= */
+@media (max-width: 1024px) {
+
+  /* Top Nav */
+  .top-nav ul {
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 20px;
+  }
+
+  /* Main Header */
+  .main-header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* Search */
+  .search-box {
+    width: 100%;
+    margin: 0;
+  }
+
+  .search-box input {
+    height: 60px;
+    font-size: 18px;
+  }
+
+  /* Cards */
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card h3 {
+    font-size: 28px;
+  }
+
+  .card p {
+    font-size: 20px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 50px 40px;
+  }
+}
+
+/* =========================
+   MOBILE (max-width: 600px)
+========================= */
+@media (max-width: 600px) {
+
+  /* Top Nav */
+  .top-nav ul {
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  /* Logo */
+  .logo img {
+    width: 140px;
+  }
+
+  .logo span {
+    text-align: center;
+  }
+
+  /* Search */
+  .search-box {
+    width: 100%;
+  }
+
+  .search-box input {
+    height: 55px;
+    font-size: 16px;
+  }
+
+  /* Icons */
+  .header-icons i {
+    font-size: 24px;
+  }
+
+  .header-icons img {
+    width: 42px;
+    height: 42px;
+  }
+
+  /* Hero Image */
+  .hero-image img {
+    height: 250px;
+  }
+
+  /* Cards */
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    aspect-ratio: auto;
+  }
+
+  .card h3 {
+    font-size: 24px;
+  }
+
+  .card p {
+    font-size: 18px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 20px;
+  }
+
+  .footer-col h3 {
+    font-size: 22px;
+  }
+
+  .footer-col a,
+  .bottom-col a {
+    font-size: 18px;
+  }
+}
+
+</style>
+</head>
+<body>
+    <header class="header">
+
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <ul>
+          <li><a href="HomePage copy.html">Home</a></li>
+        <li><a href="Reservation.html">Reservation</a></li>
+        <li><a href="Blogs.html">Blog</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="ContactUs.html">Contact Us</a></li>
+        <li><a href="NeedHelp.html">Help</a></li>
+        </ul>
+    </div>
+
+    <div class="main-header">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="logo.png" alt="Bookmytable">
+        <span>Never wait for your meal</span>
+    </div>
+
+    <!-- SEARCH BAR -->
+    <div class="search-box">
+        <input type="text" placeholder="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <!-- ICONS -->
+    <div class="header-icons">
+        <i class="fa-regular fa-bell"></i>
+        <i class="fa-solid fa-headset" style="cursor:pointer;" onclick="window.location.href='ContactUs.html'"></i>
+        <i class="fa-regular fa-heart" style="cursor:pointer;" onclick="window.location.href='Wishlist.html'"></i>
+        <img src="proficon.png" alt="profile">
+    </div>
+
+</div>
+</header>
+
+<!-- Cards -->
+ <section class="hero-image">
+        <img src="Dining.png" alt="Restaurant Table">
+</section>
+
+ <section class="explore">
+  <h2>Explore restaurants by famous collections in Chennai</h2>
+
+  <div class="card-grid">
+
+    <!-- Card 1 -->
+     <a href="Reservation.html" style="text-decoration: none; color: inherit;">
+    <div class="card">
+      <img src="Perfect.png" alt="">
+      <h3>Perfect-Buffet</h3>
+      <p>7 Restaurant found</p>
+    </div></a>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <img src="Barbeque.png" alt="">
+      <h3>Barbeque</h3>
+      <p>6 Restaurant found</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <img src="Chinese.png" alt="">
+      <h3>Chinese</h3>
+      <p>5 Restaurant found</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+      <img src="Dining.png" alt="">
+      <h3>Dining-Resi</h3>
+      <p>7 Restaurant found</p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+      <img src="Romantic.png" alt="">
+      <h3>Romantic</h3>
+      <p>6 Restaurant found</p>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card">
+      <img src="luxury.png" alt="">
+      <h3>Luxury</h3>
+      <p>5 Restaurant found</p>
+    </div>
+
+    <!-- Repeat for 12 cards -->
+    <div class="card">
+      <img src="Perfect.png" alt="">
+      <h3>Perfect-Buffet</h3>
+      <p>7 Restaurant found</p>
+    </div>
+
+    <div class="card">
+      <img src="Barbeque.png" alt="">
+      <h3>Barbeque</h3>
+      <p>6 Restaurant found</p>
+    </div>
+
+    <div class="card">
+      <img src="Chinese.png" alt="">
+      <h3>Chinese</h3>
+      <p>5 Restaurant found</p>
+    </div>
+
+    <div class="card">
+      <img src="Dining.png" alt="">
+      <h3>Dining-Resi</h3>
+      <p>7 Restaurant found</p>
+    </div>
+
+    <div class="card">
+      <img src="Romantic.png" alt="">
+      <h3>Romantic</h3>
+      <p>6 Restaurant found</p>
+    </div>
+
+    <div class="card">
+      <img src="luxury.png" alt="">
+      <h3>Luxury</h3>
+      <p>5 Restaurant found</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-col">
+      <h3>Company</h3>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Customer Reviews</a>
+      <a href="#">Add Your Restaurent</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Policy Info</h3>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Cookies Policy</a>
+      <a href="#">Cancellation Policy</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Cities</h3>
+      <a href="#">Chennai</a>
+      <a href="#">Banglore</a>
+      <a href="#">Hyderabad</a>
+      <a href="#">Mumbai</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Help</h3>
+      <a href="#">Booking Status</a>
+      <a href="#">Add Restaurent</a>
+    </div>
+  </div>
+
+  <hr class="footer-line">
+
+  <div class="footer-bottom">
+    <div class="bottom-col">
+      <a href="#">Restaurent in Chennai</a>
+      <a href="#">Restaurent in Pune</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Bangalore</a>
+      <a href="#">Restaurent in Kolkata</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Hyderabad</a>
+      <a href="#">Restaurent in Mumbai</a>
+    </div>
+  </div>
+</footer>
+<script>
+const currentPage = window.location.pathname.split("/").pop();
+const links = document.querySelectorAll(".top-nav ul li a");
+
+links.forEach(link => {
+  const linkPage = link.getAttribute("href");
+  if (linkPage === currentPage) {
+    link.classList.add("active");
+  }
+});
+</script>
+
+</body>
+</html>

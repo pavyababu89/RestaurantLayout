@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Buffet In Chennai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body{
+  font-style:'Poppins', sans-serif ;
+  background: #efe8da
+
+  
+}
+.header {
+    font-style: 'Poppins', sans-serif;
+    
+}
+
+/* TOP NAV */
+.top-nav {
+    background:  #B89C65;
+    padding: 14px 0;
+}
+
+.top-nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.top-nav li {
+    cursor: pointer;
+}
+
+.top-nav .active {
+    font-weight: 600;
+}
+
+.main-header {
+    display: flex;              /* 🔥 this is the fix */
+    align-items: center;        /* vertical alignment */
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #ddd1bd;
+    margin-bottom: 20px;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logo img {
+    width: 180px;
+}
+
+.logo span {
+    font-size: 13px;
+    color: #555;
+}
+
+/* SEARCH */
+.search-box {
+    position: relative;
+     margin: 0 40px;
+    width: 800px;          
+    height: 80px; 
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 50px 14px 25px;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    height:70px;
+    
+}
+
+.search-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.search-box input::placeholder {
+    color: black;
+    opacity: 1; /* important for Chrome */
+}
+
+/* ICONS */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header-icons i {
+    font-size: 30px;
+    color: #b5985a;
+    cursor: pointer;
+}
+
+.header-icons img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+/* BUFFET */
+
+/* ===== FULL WIDTH WRAPPERS ===== */
+.top-section,
+.tabs,
+.content {
+  width: 100%;
+  margin: 0;
+}
+
+/* ===== TOP SECTION ===== */
+.top-section {
+  display: flex;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.image-box {
+  width: 60%;
+  height: 360px;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-box {
+  width: 40%;
+  padding: 30px;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title-row h2{
+    font-size: 28px;
+}
+
+.title-row i {
+  font-size: 20px;
+  color: #b89b5e;
+  cursor: pointer;
+}
+
+.address {
+  font-size: 20px;
+  color: black;
+  margin: 12px 0;
+  margin-bottom: 50px;
+}
+
+.meta {
+  font-size: 20px;
+  margin-top: 22px;
+}
+
+.rating {
+  color: yellow;
+  margin-top: 10px;
+  font-size: 26px;
+}
+
+/* ===== TABS ===== */
+.tabs {
+  display: flex;
+  background: #fff;
+  border: 1px solid black
+}
+
+.tab {
+  width: 50%;
+  text-align: center;
+  padding: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 22px;
+}
+.tab:first-child {
+  border-right: 1px solid #000;
+}
+
+.tab.active {
+  border-bottom: 3px solid #b89b5e;
+}
+
+/* ===== CONTENT ===== */
+.content {
+  display: flex;
+  background: #fff;
+}
+
+.left {
+  width: 60%;
+  padding: 30px 60px;
+}
+.left h3{
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.right {
+  width: 40%;
+  padding: 30px 60px;
+  border-left: 1px solid #eee;
+}
+
+.section {
+  margin-top: 22px;
+}
+
+.section h4 {
+  margin-bottom: 6px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.section p {
+  font-size: 22px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* ===== MAP ===== */
+.map img {
+  width: 100%;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+/* ===== BUTTON ===== */
+.reserve-btn {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px;
+  background: #b89b5e;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.reserve-btn:hover {
+  opacity: 0.9;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .top-section,
+  .content {
+    flex-direction: column;
+  }
+
+  .image-box,
+  .info-box,
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .left,
+  .right {
+    padding: 25px;
+  }
+
+  .right {
+    border-left: none;
+    border-top: 1px solid #eee;
+  }
+}
+/* FOOTER */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  background-color: #B89C65; /* same gold shade */
+  color: #fff;
+  padding: 60px 80px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-col h3 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.footer-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-line {
+  border: none;
+  height: 2px;
+  background: #fff;
+  margin: 50px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.bottom-col a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.top-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+       
+}
+
+.top-nav ul li a.active {
+    color: #000;       /* active black */
+    font-weight: 600;
+}
+.tabs a {
+    text-decoration: none; /* removes underline */
+    color: inherit; /* keeps the text color same as other tabs */
+    display: inline-block; 
+    padding: 10px 20px; 
+}
+
+.tabs a.active {
+    font-weight: bold; 
+    
+}
+</style>
+</head>
+<body>
+    <header class="header">
+
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <ul>
+        <li><a href="HomePage copy.html">Home</a></li>
+        <li><a href="Reservation.html">Reservation</a></li>
+        <li><a href="Blogs.html">Blog</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="ContactUs.html">Contact Us</a></li>
+        <li><a href="NeedHelp.html">Help</a></li>
+        </ul>
+    </div>
+
+    <div class="main-header">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="logo.png" alt="Bookmytable">
+        <span>Never wait for your meal</span>
+    </div>
+
+    <!-- SEARCH BAR -->
+    <div class="search-box">
+        <input type="text" placeholder="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <!-- ICONS -->
+    <div class="header-icons">
+        <i class="fa-regular fa-bell"></i>
+        <i class="fa-solid fa-headset" style="cursor:pointer;" onclick="window.location.href='ContactUs.html'"></i>
+        <i class="fa-regular fa-heart"></i>
+        <img src="proficon.png" alt="profile">
+    </div>
+
+</div>
+</header>
+
+<!-- Grant Buffet -->
+  <!-- TOP SECTION -->
+  <div class="top-section">
+    <div class="image-box">
+      <img src="CustReview.png" alt="">
+    </div>
+
+    <div class="info-box">
+      <div class="title-row">
+        <h2>Grant Buffet</h2>
+        <i class="fa-regular fa-heart"></i>
+      </div>
+
+      <p class="address">
+        Upper Ground Floor, East court, Phoenix Market City,<br>
+        Viman nagar, Chennai..
+      </p>
+
+      <hr>
+
+      <p class="meta">
+        North Indian, Mohali, Italian, BBQ
+      </p>
+      <p class="meta">
+        Cost for two : ₹1000
+      </p>
+
+      <div class="rating">
+        ★★★★☆
+      </div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <a href="GrandBuffet.html" class="tab active">Overview Restaurant</a>
+    <a href="MenuCard.html" class="tab">Menu Card</a>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+    <div class="left">
+      <h3>Grant Buffet Overview</h3>
+
+      <div class="section">
+        <h4>Phone Number</h4>
+        <p>3988398923</p>
+      </div>
+
+      <div class="section">
+        <h4>Cuisines</h4>
+        <p>North Indian, Mohali, Italian, BBQ</p>
+      </div>
+
+      <hr>
+
+      <div class="section">
+        <h4>Average Cost</h4>
+        <p>₹ 1000 for two peoples (approx.)</p>
+      </div>
+
+      <div class="section">
+        <h4>Famous for</h4>
+        <p>
+          Decor, Live Music, Live Grill, Mutton Roganjosh,
+          Naan, Dahi Vada, Salads, Kulfi, Chicken Tikka
+        </p>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="section">
+        <h4>
+          <i class="fa-regular fa-clock"></i> Opening hours
+        </h4>
+        <p>12noon – 3pm, 7pm – 11pm</p>
+      </div>
+
+      <div class="section">
+        <h4>Address</h4>
+        <p>
+          Upper Ground Floor, East Court, Phoenix Market City,
+          Viman nagar, Chennai - 623088
+        </p>
+      </div>
+
+      <div class="map">
+        <img src="Map.png">
+      </div>
+
+      
+       <button class="reserve-btn" onclick="window.location.href='ReserveTable.html'">Reserve Now</button>
+    </div>
+  </div>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-col">
+      <h3>Company</h3>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Customer Reviews</a>
+      <a href="#">Add Your Restaurent</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Policy Info</h3>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Cookies Policy</a>
+      <a href="#">Cancellation Policy</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Cities</h3>
+      <a href="#">Chennai</a>
+      <a href="#">Banglore</a>
+      <a href="#">Hyderabad</a>
+      <a href="#">Mumbai</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Help</h3>
+      <a href="#">Booking Status</a>
+      <a href="#">Add Restaurent</a>
+    </div>
+  </div>
+
+  <hr class="footer-line">
+
+  <div class="footer-bottom">
+    <div class="bottom-col">
+      <a href="#">Restaurent in Chennai</a>
+      <a href="#">Restaurent in Pune</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Bangalore</a>
+      <a href="#">Restaurent in Kolkata</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Hyderabad</a>
+      <a href="#">Restaurent in Mumbai</a>
+    </div>
+  </div>
+</footer>
+<script>
+const currentPage = window.location.pathname.split("/").pop();
+const links = document.querySelectorAll(".top-nav ul li a");
+
+links.forEach(link => {
+  const linkPage = link.getAttribute("href");
+  if (linkPage === currentPage) {
+    link.classList.add("active");
+  }
+});
+</script>
+</body>
+</html>
