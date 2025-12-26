@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wishlist PAge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body{
+  font-family:'Poppins', sans-serif ;
+  background: #efe8da
+
+  
+}
+.header {
+    font-style: 'Poppins', sans-serif;
+    
+}
+
+/* TOP NAV */
+.top-nav {
+    background:  #B89C65;
+    padding: 14px 0;
+}
+
+.top-nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.top-nav li {
+    cursor: pointer;
+}
+
+.top-nav .active {
+    font-weight: 600;
+}
+
+.main-header {
+    display: flex;              /* 🔥 this is the fix */
+    align-items: center;        /* vertical alignment */
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #ddd1bd;
+    margin-bottom: 20px;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logo img {
+    width: 180px;
+}
+
+.logo span {
+    font-size: 13px;
+    color: #555;
+}
+
+/* SEARCH */
+.search-box {
+    position: relative;
+     margin: 0 40px;
+    width: 800px;          
+    height: 80px; 
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 50px 14px 25px;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    height:70px;
+    
+}
+
+.search-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.search-box input::placeholder {
+    color: black;
+    opacity: 1; /* important for Chrome */
+}
+
+/* ICONS */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header-icons i {
+    font-size: 30px;
+    /* color: #b5985a; */
+    cursor: pointer;
+}
+
+.header-icons img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+.top-section,
+.content {
+  width: 100%;
+  margin: 0;
+}
+/* WISHLIST */
+/* ===== TOP SECTION ===== */
+.top-section {
+  display: flex;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.image-box {
+  width: 60%;
+  height: 360px;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-box {
+  width: 40%;
+  padding: 30px;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title-row h2{
+    font-size: 28px;
+}
+
+.title-row i {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.address {
+  font-size: 20px;
+  color: black;
+  margin: 12px 0;
+  margin-bottom: 50px;
+}
+
+.meta {
+  font-size: 20px;
+  margin-top: 22px;
+}
+
+.rating {
+  color: yellow;
+  margin-top: 10px;
+  font-size: 26px;
+}
+.show-more {
+  display: block;
+  margin: 20px auto 15px;   /* moved DOWN */
+  background: #caa76a;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+/* TITLE */
+.title {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+ .page-title{
+  text-align:center;
+  font-size:32px;
+  font-weight:600;
+  margin:30px 0;
+}
+.info-box{
+  position: relative; /* IMPORTANT */
+}
+
+.add-more-grand{
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  font-size: 18px;
+  color: #000;       /* BLACK */
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* MAIN LAYOUT */
+.content {
+  display: flex;
+  justify-content: space-between; /* left + right */
+  align-items: flex-start;
+}
+
+/* LEFT CARD */
+.card {
+  display: flex;
+  background: #fff;
+  border-radius: 10px;
+  width: 50%;  /* little wider */
+  min-height: 220px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 220px;
+  object-fit: cover;
+}
+
+.card-details {
+  padding: 16px;
+  flex: 1;
+  position: relative;
+}
+
+/* HEART */
+.heart {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  color: #caa76a;
+  font-size: 26px;
+}
+
+/* PANNO CATTO */
+.card-details h3 {
+  margin: 0;
+  font-size: 28px; /* BIGGER */
+  font-weight: bold;
+  text-align: left; /* LEFT */
+  margin-left: 50px;
+}
+
+.card-details p {
+ 
+  font-size: 22px;
+  color: black;
+  margin-left: 50px;
+  line-height: 2;
+}
+
+.price {
+  font-weight: 500;
+  margin-top: 12px;
+  margin-left: 50px;
+  font-size: 22px;
+}
+
+.add-more{
+  position:absolute;
+  bottom:16px;
+  right:16px;
+  font-size:16px;
+  color:#000;        /* BLACK */
+  cursor:pointer;
+  font-weight:500;
+}
+
+/* RIGHT ORDER REVIEW */
+.order-review {
+  width: 220px;
+  margin-right: 10px;
+}
+
+.order-review h4 {
+  margin:  0 0 12px;
+  font-size: 32px;
+}
+
+.order-review p {
+  font-size: 20px;
+  margin: 6px 0;
+}
+
+.reserve-btn {
+  margin-top: 12px;
+  background: #caa76a;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+}
+i.fa-heart {
+  color: #caa76a !important;
+  cursor: pointer;
+}
+/* FOOTER */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  background-color: #B89C65; /* same gold shade */
+  color: #fff;
+  padding: 60px 80px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-col h3 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.footer-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-line {
+  border: none;
+  height: 2px;
+  background: #fff;
+  margin: 50px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.bottom-col a:hover {
+  text-decoration: underline;
+}
+
+.top-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+       
+}
+
+.top-nav ul li a.active {
+    color: #000;       /* active black */
+    font-weight: 600;
+}
+/* =========================
+   TABLET (max-width: 1024px)
+========================= */
+@media (max-width: 1024px) {
+
+  .search-box {
+    width: 500px;
+    height: 60px;
+  }
+
+  .search-box input {
+    height: 60px;
+    font-size: 18px;
+  }
+
+  .top-section {
+    flex-direction: column;
+  }
+
+  .image-box,
+  .info-box {
+    width: 100%;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .order-review {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+
+/* =========================
+   MOBILE (max-width: 768px)
+========================= */
+@media (max-width: 768px) {
+
+  /* Top nav */
+  .top-nav ul {
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 18px;
+  }
+
+  /* Header */
+  .main-header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .logo img {
+    width: 140px;
+  }
+
+  .search-box {
+    width: 100%;
+    margin: 0;
+  }
+
+  .header-icons {
+    gap: 18px;
+  }
+
+  /* Wishlist top section */
+  .title-row h2 {
+    font-size: 22px;
+  }
+
+  .address,
+  .meta {
+    font-size: 18px;
+  }
+
+  .rating {
+    font-size: 22px;
+  }
+
+  /* Menu card */
+  .card {
+    flex-direction: column;
+  }
+
+  .card img {
+    width: 100%;
+    height: 220px;
+  }
+
+  .card-details h3,
+  .card-details p,
+  .price {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 20px;
+  }
+
+  .footer-col h3 {
+    font-size: 22px;
+  }
+
+  .footer-col a,
+  .bottom-col a {
+    font-size: 18px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE (max-width: 480px)
+========================= */
+@media (max-width: 480px) {
+
+  .page-title {
+    font-size: 26px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .show-more {
+    font-size: 18px;
+    padding: 8px 14px;
+  }
+
+  .reserve-btn {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .order-review h4 {
+    font-size: 26px;
+  }
+}
+
+</style>
+</head>
+<body>
+    <header class="header">
+
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <ul>
+        <li><a href="HomePage copy.html">Home</a></li>
+        <li><a href="Reservation.html">Reservation</a></li>
+        <li><a href="Blogs.html">Blog</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="ContactUs.html">Contact Us</a></li>
+        <li><a href="NeedHelp.html">Help</a></li>
+        </ul>
+    </div>
+
+    <div class="main-header">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="logo.png" alt="Bookmytable">
+        <span>Never wait for your meal</span>
+    </div>
+
+    <!-- SEARCH BAR -->
+    <div class="search-box">
+        <input type="text" placeholder="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <!-- ICONS -->
+    <div class="header-icons">
+        <i class="fa-regular fa-bell"></i>
+        <i class="fa-solid fa-headset" style="cursor:pointer;" onclick="window.location.href='ContactUs.html'"></i>
+        <i class="fa-regular fa-heart" style="cursor:pointer;" onclick="window.location.href='Wishlist.html'"></i>
+        <img src="proficon.png" alt="profile">
+    </div>
+
+</div>
+</header>
+
+<div class="page-title">Our Wishlist</div>
+
+<div class="top-section">
+    <div class="image-box">
+      <img src="CustReview.png" alt="">
+    </div>
+
+    <div class="info-box">
+      <div class="title-row">
+        <h2>Grant Buffet</h2>
+        <i class="fa-regular fa-heart" style="color:#caa76a;"></i>
+      </div>
+
+      <p class="address">
+        Upper Ground Floor, East court, Phoenix Market City,<br>
+        Viman nagar, Chennai..
+      </p>
+
+      <hr>
+
+      <p class="meta">
+        North Indian, Mohali, Italian, BBQ
+      </p>
+      <p class="meta">
+        Cost for two : ₹1000
+      </p>
+
+      <div class="rating">
+        ★★★★☆
+        </div>
+        <div class="add-more-grand" style="cursor:pointer;" onclick="window.location.href='Reservation.html'">
+        Add more +
+      </div>
+      
+    </div>
+  </div>
+  <button class="show-more">Show more</button>
+<div class="title">Menu Item Whitelist</div>
+
+<div class="content">
+
+  <!-- MENU CARD -->
+  <div class="card">
+    <img src="Panno.png" alt="dessert">
+    <div class="card-details">
+      <i class="fa-regular fa-heart heart" style="color:#caa76a;"></i>
+      <h3>Panno Catto</h3>
+      <p>North Indian, Mandi,<br>Italian BBQ</p>
+      <div class="price">₹ 240</div>
+      <div class="add-more" style="cursor:pointer;" onclick="window.location.href='menuCard.html'">
+  Add more +
+</div>
+    </div>
+  </div>
+
+  <!-- ORDER REVIEW -->
+  <div class="order-review">
+    <h4>Order Review</h4>
+    <p>Table Price: Rs. 1000</p>
+    <p>Menu Price: Rs. 240</p>
+    <p><strong>Total: 1240</strong></p>
+    <button class="reserve-btn" onclick="window.location.href='ReserveTable.html'">
+  Reserve to Pay
+</button>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-col">
+      <h3>Company</h3>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Customer Reviews</a>
+      <a href="#">Add Your Restaurent</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Policy Info</h3>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Cookies Policy</a>
+      <a href="#">Cancellation Policy</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Cities</h3>
+      <a href="#">Chennai</a>
+      <a href="#">Banglore</a>
+      <a href="#">Hyderabad</a>
+      <a href="#">Mumbai</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Help</h3>
+      <a href="#">Booking Status</a>
+      <a href="#">Add Restaurent</a>
+    </div>
+  </div>
+
+  <hr class="footer-line">
+
+  <div class="footer-bottom">
+    <div class="bottom-col">
+      <a href="#">Restaurent in Chennai</a>
+      <a href="#">Restaurent in Pune</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Bangalore</a>
+      <a href="#">Restaurent in Kolkata</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Hyderabad</a>
+      <a href="#">Restaurent in Mumbai</a>
+    </div>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('.fa-heart').forEach(heart=>{
+  heart.addEventListener('click',()=>{
+    heart.classList.toggle('fa-solid');
+    heart.classList.toggle('fa-regular');
+  });
+});
+const currentPage = window.location.pathname.split("/").pop();
+const links = document.querySelectorAll(".top-nav ul li a");
+
+links.forEach(link => {
+  const linkPage = link.getAttribute("href");
+  if (linkPage === currentPage) {
+    link.classList.add("active");
+  }
+});
+</script>
+</body>
+</html>

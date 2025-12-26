@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Confirmation Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body{
+  font-style:'Poppins', sans-serif ;
+  background: #efe8da
+
+  
+}
+.header {
+    font-style: 'Poppins', sans-serif;
+    
+}
+
+/* TOP NAV */
+.top-nav {
+    background:  #B89C65;
+    padding: 14px 0;
+}
+
+.top-nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.top-nav li {
+    cursor: pointer;
+}
+
+.top-nav .active {
+    font-weight: 600;
+}
+
+.main-header {
+    display: flex;              /* 🔥 this is the fix */
+    align-items: center;        /* vertical alignment */
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #ddd1bd;
+    margin-bottom: 20px;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logo img {
+    width: 180px;
+}
+
+.logo span {
+    font-size: 13px;
+    color: #555;
+}
+
+/* SEARCH */
+.search-box {
+    position: relative;
+     margin: 0 40px;
+    width: 800px;          
+    height: 80px; 
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 50px 14px 25px;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    height:70px;
+    
+}
+
+.search-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.search-box input::placeholder {
+    color: black;
+    opacity: 1; /* important for Chrome */
+}
+
+/* ICONS */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header-icons i {
+    font-size: 30px;
+    color: #b5985a;
+    cursor: pointer;
+}
+
+.header-icons img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+.tick-icon{
+  width: 110px;
+  height: 110px;
+  background: #B89C65;      /* gold color */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 58px;
+  font-weight: bold;
+  margin: 0 auto 18px auto;  /* center + spacing */
+}
+.confirm-box p{
+  margin-top: 8px;
+  margin-bottom: 26px;  /* adds gap before email */
+  font-size: 24px;
+}
+
+.confirm-box h3{
+  margin-top: 6px;
+  font-size: 22px;
+  margin-bottom: 50px;
+  font-weight: 500;
+}
+/* FOOTER */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  background-color: #B89C65; /* same gold shade */
+  color: #fff;
+  padding: 60px 80px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-col h3 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.footer-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-line {
+  border: none;
+  height: 2px;
+  background: #fff;
+  margin: 50px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.bottom-col a:hover {
+  text-decoration: underline;
+}
+
+.top-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+       
+}
+
+.top-nav ul li a.active {
+    color: #000;       /* active black */
+    font-weight: 600;
+}
+@media (max-width: 1024px) {
+
+  /* Header */
+  .main-header {
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  .search-box {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .search-box input {
+    height: 60px;
+    font-size: 18px;
+  }
+
+  .header-icons i {
+    font-size: 26px;
+  }
+
+  /* Top Nav */
+  .top-nav ul {
+    flex-wrap: wrap;
+    font-size: 20px;
+    gap: 15px;
+  }
+
+  /* Confirmation Box */
+  .confirm-box {
+    padding: 60px 30px;
+  }
+
+  .confirm-box h2 {
+    font-size: 26px;
+  }
+
+  .confirm-box p {
+    font-size: 20px;
+  }
+
+  .confirm-box h3 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+
+  /* Top Navigation */
+  .top-nav ul {
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+    gap: 12px;
+    margin: 0;
+  }
+
+  /* Header */
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .logo img {
+    width: 140px;
+  }
+
+  .search-box {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  .search-box input {
+    height: 55px;
+    font-size: 16px;
+  }
+
+  .header-icons {
+    gap: 18px;
+  }
+
+  .header-icons i {
+    font-size: 24px;
+  }
+
+  /* Confirmation Section */
+  .confirm-box {
+    padding: 50px 20px;
+  }
+
+  .tick-icon {
+    width: 90px;
+    height: 90px;
+    font-size: 46px;
+  }
+
+  .confirm-box h2 {
+    font-size: 24px;
+  }
+
+  .confirm-box p {
+    font-size: 18px;
+  }
+
+  .confirm-box h3 {
+    font-size: 18px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 20px;
+  }
+
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-col h3 {
+    font-size: 22px;
+  }
+
+  .footer-col a,
+  .bottom-col a {
+    font-size: 18px;
+  }
+}
+
+</style>
+</head>
+<body>
+    <header class="header">
+
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <ul>
+        <li><a href="HomePage copy.html">Home</a></li>
+        <li><a href="Reservation.html">Reservation</a></li>
+        <li><a href="Blogs.html">Blog</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="ContactUs.html">Contact Us</a></li>
+        <li><a href="NeedHelp.html">Help</a></li>
+        </ul>
+    </div>
+
+    <div class="main-header">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="logo.png" alt="Bookmytable">
+        <span>Never wait for your meal</span>
+    </div>
+
+    <!-- SEARCH BAR -->
+    <div class="search-box">
+        <input type="text" placeholder="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <!-- ICONS -->
+    <div class="header-icons">
+        <i class="fa-regular fa-bell"></i>
+        <i class="fa-solid fa-headset" style="cursor:pointer;" onclick="window.location.href='ContactUs.html'"></i>
+        <i class="fa-regular fa-heart" style="cursor:pointer;" onclick="window.location.href='Wishlist.html'"></i>
+        <img src="proficon.png" alt="profile">
+    </div>
+
+</div>
+</header>
+
+<!-- Reser Confirmed -->
+ <div class="confirm-box" style="text-align:center; padding:80px; background:#f5ecde;">
+  <div class="tick-icon">
+  ✓
+    </div>
+
+  <h2>Reservation Confirmed</h2>
+  <p>Your table has been reserved.</p>
+
+  <p>A confirmation email has been sent to:</p>
+  <h3>amjaann@gmail.com</h3>
+</div>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-col">
+      <h3>Company</h3>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Customer Reviews</a>
+      <a href="#">Add Your Restaurent</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Policy Info</h3>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Cookies Policy</a>
+      <a href="#">Cancellation Policy</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Cities</h3>
+      <a href="#">Chennai</a>
+      <a href="#">Banglore</a>
+      <a href="#">Hyderabad</a>
+      <a href="#">Mumbai</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Help</h3>
+      <a href="#">Booking Status</a>
+      <a href="#">Add Restaurent</a>
+    </div>
+  </div>
+
+  <hr class="footer-line">
+
+  <div class="footer-bottom">
+    <div class="bottom-col">
+      <a href="#">Restaurent in Chennai</a>
+      <a href="#">Restaurent in Pune</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Bangalore</a>
+      <a href="#">Restaurent in Kolkata</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Hyderabad</a>
+      <a href="#">Restaurent in Mumbai</a>
+    </div>
+  </div>
+</footer>
+<script>
+  const currentPage = window.location.pathname.split("/").pop();
+const links = document.querySelectorAll(".top-nav ul li a");
+
+links.forEach(link => {
+  const linkPage = link.getAttribute("href");
+  if (linkPage === currentPage) {
+    link.classList.add("active");
+  }
+});
+</script>
+</body>
+</html>

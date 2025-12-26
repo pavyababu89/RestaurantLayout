@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Table</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body{
+  font-style:'Poppins', sans-serif ;
+  background: #efe8da
+
+  
+}
+.header {
+    font-style: 'Poppins', sans-serif;
+    
+}
+
+/* TOP NAV */
+.top-nav {
+    background:  #B89C65;
+    padding: 14px 0;
+}
+
+.top-nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.top-nav li {
+    cursor: pointer;
+}
+
+.top-nav .active {
+    font-weight: 600;
+}
+
+.main-header {
+    display: flex;              /* 🔥 this is the fix */
+    align-items: center;        /* vertical alignment */
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #ddd1bd;
+    margin-bottom: 20px;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logo img {
+    width: 180px;
+}
+
+.logo span {
+    font-size: 13px;
+    color: #555;
+}
+
+/* SEARCH */
+.search-box {
+    position: relative;
+     margin: 0 40px;
+    width: 800px;          
+    height: 80px; 
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 50px 14px 25px;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    height:70px;
+    
+}
+
+.search-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.search-box input::placeholder {
+    color: black;
+    opacity: 1; /* important for Chrome */
+}
+
+/* ICONS */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header-icons i {
+    font-size: 30px;
+    color: #b5985a;
+    cursor: pointer;
+}
+
+.header-icons img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+
+/* HERO IMAGE */
+.hero {
+  height: 260px;
+  background: url("ReserveTable.png") center/cover no-repeat;
+}
+
+/* TITLE BAR */
+.title-bar {
+  background: #c2a76f;
+  color: #fff;
+  text-align: center;
+  padding: 32px;
+  font-size: 28px;
+  font-weight: 600;
+
+}
+
+/* FORM SECTION */
+/* FULL-WIDTH white area */
+.white-section {
+  width: 100%;
+  background: #fff;
+}
+
+/* centered content */
+.form-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 0 80px;
+}
+/* dropdown aligned with inputs */
+.select-box {
+  width: 45%;
+  margin: 0 0 40px 0;
+}
+
+select {
+  padding: 8px 14px;
+  border: 1px solid #d8b57a;
+  border-radius: 6px;
+}
+
+/* grid layout */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 80px;
+  row-gap: 40px;
+}
+
+label {
+  color: #d8b57a;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #e3cfa3;
+  border-radius: 6px;
+}
+
+/* button exact position */
+.btn-wrap {
+  display: flex;
+  align-items: flex-end;
+}
+
+button {
+  padding: 14px 48px;
+  background: #c2a76f;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+/* FOOTER */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  background-color: #B89C65; /* same gold shade */
+  color: #fff;
+  padding: 60px 80px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-col h3 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.footer-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-line {
+  border: none;
+  height: 2px;
+  background: #fff;
+  margin: 50px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.bottom-col a:hover {
+  text-decoration: underline;
+}
+
+.top-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+       
+}
+
+.top-nav ul li a.active {
+    color: #000;       /* active black */
+    font-weight: 600;
+}
+/* =========================
+   TABLET (≤1024px)
+========================= */
+@media (max-width: 1024px) {
+
+  .main-header {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .search-box {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .search-box input {
+    height: 60px;
+    font-size: 18px;
+  }
+
+  .form-wrapper {
+    padding: 40px 20px 60px;
+  }
+
+  .form-grid {
+    column-gap: 40px;
+  }
+}
+
+
+/* =========================
+   MOBILE (≤768px)
+========================= */
+@media (max-width: 768px) {
+
+  /* Top Nav */
+  .top-nav ul {
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 18px;
+    padding: 10px;
+    margin: 0;
+  }
+
+  /* Header */
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  .header-icons {
+    margin-top: 10px;
+  }
+
+  /* Search */
+  .search-box {
+    width: 100%;
+  }
+
+  /* Hero */
+  .hero {
+    height: 180px;
+  }
+
+  /* Title */
+  .title-bar {
+    font-size: 22px;
+    padding: 20px;
+  }
+
+  /* Form */
+  .form-grid {
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+  }
+
+  select {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  button {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .btn-wrap {
+    justify-content: center;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 20px;
+  }
+
+  .footer-col h3 {
+    font-size: 22px;
+  }
+
+  .footer-col a,
+  .bottom-col a {
+    font-size: 18px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE (≤480px)
+========================= */
+@media (max-width: 480px) {
+
+  .top-nav ul {
+    font-size: 16px;
+  }
+
+  .search-box input {
+    font-size: 16px;
+    padding: 12px 45px 12px 18px;
+  }
+
+  label {
+    font-size: 13px;
+  }
+
+  input {
+    padding: 10px;
+  }
+
+  .title-bar {
+    font-size: 20px;
+  }
+}
+
+</style>
+</head>
+<body>
+    <header class="header">
+
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <ul>
+        <li><a href="HomePage copy.html">Home</a></li>
+        <li><a href="Reservation.html">Reservation</a></li>
+        <li><a href="Blogs.html">Blog</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="ContactUs.html">Contact Us</a></li>
+        <li><a href="NeedHelp.html">Help</a></li>
+        </ul>
+    </div>
+
+    <div class="main-header">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="logo.png" alt="Bookmytable">
+        <span>Never wait for your meal</span>
+    </div>
+
+    <!-- SEARCH BAR -->
+    <div class="search-box">
+        <input type="text" placeholder="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <!-- ICONS -->
+    <div class="header-icons">
+        <i class="fa-regular fa-bell"></i>
+        <i class="fa-solid fa-headset" style="cursor:pointer;" onclick="window.location.href='ContactUs.html'"></i>
+        <i class="fa-regular fa-heart" style="cursor:pointer;" onclick="window.location.href='Wishlist.html'"></i>
+        <img src="proficon.png" alt="profile">
+    </div>
+
+</div>
+</header>
+
+<div class="hero"></div>
+
+<div class="title-bar">Reservation Table</div>
+
+<div class="white-section">
+<div class="form-wrapper">
+
+  <!-- <div class="select-box">
+    <select>
+      <option>Select Location</option>
+    </select>
+  </div> -->
+  <select id="location">
+    <option value="">Select Location</option>
+    <option value="egmore">Egmore</option>
+  </select>
+
+  <div class="form-grid">
+    <div>
+      <label>Name</label>
+      <input type="text" id="name">
+    </div>
+
+    <div>
+      <label>Email</label>
+      <input type="email" id="email">
+    </div>
+
+    <div>
+      <label>Mobile</label>
+      <input type="text" id="mobile">
+    </div>
+
+    <div>
+      <label>Date</label>
+      <input type="date" id="date">
+    </div>
+
+    <div>
+      <label>Time</label>
+      <input type="time" id="time">
+    </div>
+
+    <div class="btn-wrap">
+      <button onclick="window.location.href='PaymentSelection.html'">Submit to Pay</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-col">
+      <h3>Company</h3>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Customer Reviews</a>
+      <a href="#">Add Your Restaurent</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Policy Info</h3>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Cookies Policy</a>
+      <a href="#">Cancellation Policy</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Cities</h3>
+      <a href="#">Chennai</a>
+      <a href="#">Banglore</a>
+      <a href="#">Hyderabad</a>
+      <a href="#">Mumbai</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Help</h3>
+      <a href="#">Booking Status</a>
+      <a href="#">Add Restaurent</a>
+    </div>
+  </div>
+
+  <hr class="footer-line">
+
+  <div class="footer-bottom">
+    <div class="bottom-col">
+      <a href="#">Restaurent in Chennai</a>
+      <a href="#">Restaurent in Pune</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Bangalore</a>
+      <a href="#">Restaurent in Kolkata</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Hyderabad</a>
+      <a href="#">Restaurent in Mumbai</a>
+    </div>
+  </div>
+</footer>
+<script>
+const data = {
+  egmore: {
+    name: "Amjath Althaf",
+    email: "amjaann@gmail.com",
+    mobile: "+91 7867980688",
+    date: "2025-07-17",   // ✅ correct
+    time: "15:00"         // ✅ correct (3:00 PM)
+  }
+};
+
+const locationSelect = document.getElementById("location");
+
+function fillField(field, key) {
+  field.addEventListener("focus", () => {
+    const loc = locationSelect.value;
+    if (!loc) return;
+    field.value = data[loc][key];
+  });
+}
+
+fillField(document.getElementById("name"), "name");
+fillField(document.getElementById("email"), "email");
+fillField(document.getElementById("mobile"), "mobile");
+fillField(document.getElementById("date"), "date");
+fillField(document.getElementById("time"), "time");
+
+const currentPage = window.location.pathname.split("/").pop();
+const links = document.querySelectorAll(".top-nav ul li a");
+
+links.forEach(link => {
+  const linkPage = link.getAttribute("href");
+  if (linkPage === currentPage) {
+    link.classList.add("active");
+  }
+});
+</script>
+
+</body>
+</html>

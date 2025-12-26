@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Page Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body{
+  font-style:'Poppins', sans-serif ;
+  background: #efe8da
+
+  
+}
+.header {
+    font-style: 'Poppins', sans-serif;
+    
+}
+
+/* TOP NAV */
+.top-nav {
+    background:  #B89C65;
+    padding: 14px 0;
+}
+
+.top-nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.top-nav li {
+    cursor: pointer;
+}
+
+.top-nav .active {
+    font-weight: 600;
+}
+
+.main-header {
+    display: flex;              /* 🔥 this is the fix */
+    align-items: center;        /* vertical alignment */
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #ddd1bd;
+    margin-bottom: 20px;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logo img {
+    width: 180px;
+}
+
+.logo span {
+    font-size: 13px;
+    color: #555;
+}
+
+/* SEARCH */
+.search-box {
+    position: relative;
+     margin: 0 40px;
+    width: 800px;          
+    height: 80px; 
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 50px 14px 25px;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    height:70px;
+    
+}
+
+.search-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.search-box input::placeholder {
+    color: black;
+    opacity: 1; /* important for Chrome */
+}
+
+/* ICONS */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header-icons i {
+    font-size: 30px;
+    color: #b5985a;
+    cursor: pointer;
+}
+
+.header-icons img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+/* HERO IMG */
+.hero-image {
+  width: 100%;
+  height: 450px; /* adjust height if needed */
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/*  BUFFET SECTION */
+ .restaurant-section {
+  width: 100%;
+  padding: 40px 40px; /* side spacing */
+  box-sizing: border-box;
+}
+
+.restaurant-section h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 4px;
+}
+
+/* CARD */
+ .restaurant-card {
+  width: 100%;
+  display: flex;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+
+/* IMAGE */
+.card-image {
+  width: 50%;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.card-content {
+  width: 50%;
+  padding: 40px;
+  position: relative;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.place {
+  color: black;
+  font-size: 22px;
+}
+
+.heart {
+  font-size: 50px;
+  cursor: pointer;
+  color: #b59b5a;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+.desc {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.cost span {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.cost strong {
+  font-size: 20px;
+  color: #b59b5a;
+}
+
+.rating {
+  color: #f6c500;
+  font-size: 22px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .restaurant-card {
+    flex-direction: column;
+  }
+
+  .card-image,
+  .card-content {
+    width: 100%;
+  }
+
+  .card-image img {
+    height: 250px;
+  }
+}
+
+/* FOOTER */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  background-color: #B89C65; /* same gold shade */
+  color: #fff;
+  padding: 60px 80px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-col h3 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.footer-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-line {
+  border: none;
+  height: 2px;
+  background: #fff;
+  margin: 50px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.bottom-col a:hover {
+  text-decoration: underline;
+}
+
+.heart {
+  font-size: 50px;
+  cursor: pointer;
+  color: #333;   /* normal visible color */
+}
+
+.heart.filled {
+  color: #B59C65;  /* beige when filled */
+}
+.top-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+       
+}
+
+.top-nav ul li a.active {
+    color: #000;       /* active black */
+    font-weight: 600;
+}
+@media (max-width: 1024px) {
+
+  /* HEADER */
+  .main-header {
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .search-box {
+    width: 100%;
+    margin: 0;
+  }
+
+  .search-box input {
+    height: 60px;
+    font-size: 18px;
+  }
+
+  /* TOP NAV */
+  .top-nav ul {
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 20px;
+  }
+
+  /* HERO */
+  .hero-image {
+    height: 350px;
+  }
+
+  /* CARD TEXT */
+  .card-header h3 {
+    font-size: 30px;
+  }
+
+  .desc,
+  .place,
+  .cost span,
+  .rating {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+
+  /* TOP NAV */
+  .top-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+  }
+
+  /* HEADER */
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  .header-icons {
+    gap: 18px;
+  }
+
+  .header-icons i {
+    font-size: 26px;
+  }
+
+  /* SEARCH */
+  .search-box input {
+    font-size: 16px;
+    height: 55px;
+  }
+
+  /* HERO */
+  .hero-image {
+    height: 250px;
+  }
+
+  /* RESTAURANT SECTION */
+  .restaurant-section {
+    padding: 20px;
+  }
+
+  .restaurant-section h2 {
+    font-size: 26px;
+    letter-spacing: 2px;
+  }
+
+  /* CARD */
+  .restaurant-card {
+    flex-direction: column;
+  }
+
+  .card-image img {
+    height: 220px;
+  }
+
+  .card-content {
+    padding: 25px;
+  }
+
+  .card-header h3 {
+    font-size: 26px;
+  }
+
+  .heart {
+    font-size: 40px;
+  }
+
+  .desc,
+  .place {
+    font-size: 18px;
+  }
+
+  .cost span,
+  .rating {
+    font-size: 18px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 40px 25px;
+  }
+
+  .footer-col h3 {
+    font-size: 22px;
+  }
+
+  .footer-col a,
+  .bottom-col a {
+    font-size: 18px;
+  }
+}
+
+</style>
+</head>
+<body>
+    <header class="header">
+
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <ul>
+        <li><a href="HomePage copy.html">Home</a></li>
+        <li><a href="Reservation.html">Reservation</a></li>
+        <li><a href="Blogs.html">Blog</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="ContactUs.html">Contact Us</a></li>
+        <li><a href="NeedHelp.html">Help</a></li>
+        </ul>
+    </div>
+
+    <div class="main-header">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="logo.png" alt="Bookmytable">
+        <span>Never wait for your meal</span>
+    </div>
+
+    <!-- SEARCH BAR -->
+    <div class="search-box">
+        <input type="text" placeholder="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <!-- ICONS -->
+    <div class="header-icons">
+        <i class="fa-regular fa-bell"></i>
+        <i class="fa-solid fa-headset" style="cursor:pointer;" onclick="window.location.href='ContactUs.html'"></i>
+        <i class="fa-regular fa-heart" style="cursor:pointer;" onclick="window.location.href='Wishlist.html'"></i>
+        <img src="proficon.png" alt="profile">
+    </div>
+
+</div>
+</header>
+
+<!-- Image Section After Header -->
+<section class="hero-image">
+  <img src="table.png" alt="Outdoor dining setup">
+</section>
+
+<!-- BUFFET -->
+ <section class="restaurant-section">
+  <h2>Perfect Buffet Restaurant in Chennai</h2>
+
+  <!-- CARD 1 -->
+   <a href="GrandBuffet.html" class="restaurant-link" style="text-decoration: none; color: inherit;">
+  <div class="restaurant-card">
+    <div class="card-image">
+      <img src="CustReview.png" alt="">
+    </div>
+
+    <div class="card-content">
+      <div class="card-header">
+        <div>
+          <h3>Grant Buffet</h3>
+          <span class="place">Virugambakkam</span>
+        </div>
+        <span class="heart">♡</span>
+      </div>
+
+      <hr>
+
+      <p class="desc">North Indian, Mughlai, Italian, BBQ</p>
+
+      <div class="card-footer">
+        <div class="cost">
+          <span>Cost for two :</span>
+          <strong>₹1800</strong>
+        </div>
+        <div class="rating">★★★★★</div>
+      </div>
+    </div>
+  </div></a>
+
+  <!-- CARD 2 -->
+  <div class="restaurant-card">
+    <div class="card-image">
+      <img src="Spice.png" alt="">
+    </div>
+
+    <div class="card-content">
+      <div class="card-header">
+        <div>
+          <h3>Spice Chicken</h3>
+          <span class="place">Viman Nagar</span>
+        </div>
+        <span class="heart">♡</span>
+      </div>
+
+      <hr>
+
+      <p class="desc">North Indian, Mohali, Italian, BBQ</p>
+
+      <div class="card-footer">
+        <div class="cost">
+          <span>Cost for two :</span>
+          <strong>₹1000</strong>
+        </div>
+        <div class="rating">★★★★★</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="restaurant-card">
+    <div class="card-image">
+      <img src="table.png" alt="">
+    </div>
+
+    <div class="card-content">
+      <div class="card-header">
+        <div>
+          <h3>Cigree</h3>
+          <span class="place">Virugambakkam</span>
+        </div>
+        <span class="heart">♡</span>
+      </div>
+
+      <hr>
+
+      <p class="desc">North Indian, Mughlai, Italian, BBQ</p>
+
+      <div class="card-footer">
+        <div class="cost">
+          <span>Cost for two :</span>
+          <strong>₹1800</strong>
+        </div>
+        <div class="rating">★★★★★</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 4 -->
+  <div class="restaurant-card">
+    <div class="card-image">
+      <img src="Punjab.png" alt="">
+    </div>
+
+    <div class="card-content">
+      <div class="card-header">
+        <div>
+          <h3>Taste of Punjab</h3>
+          <span class="place">Virugambakkam</span>
+        </div>
+        <span class="heart">♡</span>
+      </div>
+
+      <hr>
+
+      <p class="desc">North Indian, Mughlai, Italian, BBQ</p>
+
+      <div class="card-footer">
+        <div class="cost">
+          <span>Cost for two :</span>
+          <strong>₹1800</strong>
+        </div>
+        <div class="rating">★★★★★</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-col">
+      <h3>Company</h3>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Customer Reviews</a>
+      <a href="#">Add Your Restaurent</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Policy Info</h3>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Cookies Policy</a>
+      <a href="#">Cancellation Policy</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Cities</h3>
+      <a href="#">Chennai</a>
+      <a href="#">Banglore</a>
+      <a href="#">Hyderabad</a>
+      <a href="#">Mumbai</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Help</h3>
+      <a href="#">Booking Status</a>
+      <a href="#">Add Restaurent</a>
+    </div>
+  </div>
+
+  <hr class="footer-line">
+
+  <div class="footer-bottom">
+    <div class="bottom-col">
+      <a href="#">Restaurent in Chennai</a>
+      <a href="#">Restaurent in Pune</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Bangalore</a>
+      <a href="#">Restaurent in Kolkata</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Hyderabad</a>
+      <a href="#">Restaurent in Mumbai</a>
+    </div>
+  </div>
+</footer>
+<script>
+document.querySelectorAll(".heart").forEach(function(heart){
+  heart.addEventListener("click", function() {
+    heart.classList.toggle("filled");
+
+    if (heart.classList.contains("filled")) {
+      heart.textContent = "♥";   // filled heart + beige
+    } else {
+      heart.textContent = "♡";   // outline heart
+    }
+  });
+});
+const currentPage = window.location.pathname.split("/").pop();
+const links = document.querySelectorAll(".top-nav ul li a");
+
+links.forEach(link => {
+  const linkPage = link.getAttribute("href");
+  if (linkPage === currentPage) {
+    link.classList.add("active");
+  }
+});
+</script>
+
+</body>
+</html>
