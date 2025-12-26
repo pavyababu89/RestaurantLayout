@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AboutUs Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+body{
+  font-style:'Poppins', sans-serif ;
+  background: #efe8da
+
+  
+}
+.header {
+    font-style: 'Poppins', sans-serif;
+    
+}
+
+/* TOP NAV */
+.top-nav {
+    background:  #B89C65;
+    padding: 14px 0;
+}
+
+.top-nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.top-nav li {
+    cursor: pointer;
+}
+
+.top-nav .active {
+    font-weight: 600;
+}
+
+.main-header {
+    display: flex;              /* 🔥 this is the fix */
+    align-items: center;        /* vertical alignment */
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #ddd1bd;
+    margin-bottom: 20px;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logo img {
+    width: 180px;
+}
+
+.logo span {
+    font-size: 13px;
+    color: #555;
+}
+
+/* SEARCH */
+.search-box {
+    position: relative;
+     margin: 0 40px;
+    width: 800px;          
+    height: 80px; 
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 50px 14px 25px;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    height:70px;
+    
+}
+
+.search-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.search-box input::placeholder {
+    color: black;
+    opacity: 1; /* important for Chrome */
+}
+
+/* ICONS */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header-icons i {
+    font-size: 30px;
+    color: #b5985a;
+    cursor: pointer;
+}
+
+.header-icons img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+.top-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+       
+}
+
+.top-nav ul li a.active {
+    color: #000;       /* active black */
+    font-weight: 600;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f5efe6;
+}
+
+.about-section {
+    width: 100%;
+    background-color: #f5efe6;
+    padding: 50px 40px 0;
+}
+.about-section h2 {
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    color: #000;
+    text-align: center;
+}
+
+.about-section p {
+    font-size: 26px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 24px;
+    max-width: none;
+}
+
+.about-image {
+    width: 100%;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* FOOTER */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  background-color: #B89C65; /* same gold shade */
+  color: #fff;
+  padding: 60px 80px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-col h3 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.footer-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-line {
+  border: none;
+  height: 2px;
+  background: #fff;
+  margin: 50px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.bottom-col a:hover {
+  text-decoration: underline;
+}
+/* =========================
+   MOBILE VIEW (max-width: 768px)
+========================= */
+@media (max-width: 768px) {
+
+  /* TOP NAV */
+  .top-nav ul {
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  /* MAIN HEADER */
+  .main-header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* LOGO */
+  .logo img {
+    width: 140px;
+  }
+
+  .logo span {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  /* SEARCH BOX */
+  .search-box {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .search-box input {
+    height: 55px;
+    font-size: 16px;
+  }
+
+  /* HEADER ICONS */
+  .header-icons {
+    gap: 16px;
+  }
+
+  .header-icons i {
+    font-size: 22px;
+  }
+
+  .header-icons img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* ABOUT SECTION */
+  .about-section {
+    padding: 30px 20px 0;
+  }
+
+  .about-section h2 {
+    font-size: 24px;
+  }
+
+  .about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 40px 25px;
+  }
+
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .footer-col h3 {
+    font-size: 22px;
+  }
+
+  .footer-col a,
+  .bottom-col a {
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE (max-width: 480px)
+========================= */
+@media (max-width: 480px) {
+
+  /* TOP NAV */
+  .top-nav ul {
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  /* SEARCH */
+  .search-box input {
+    font-size: 14px;
+    padding: 12px 40px 12px 20px;
+  }
+
+  /* ABOUT TEXT */
+  .about-section p {
+    font-size: 16px;
+  }
+
+  /* FOOTER TEXT */
+  .footer-col h3 {
+    font-size: 20px;
+  }
+
+  .footer-col a,
+  .bottom-col a {
+    font-size: 16px;
+  }
+}
+</style>
+<body>
+    <header class="header">
+
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <ul>
+        <li><a href="HomePage copy.html">Home</a></li>
+        <li><a href="Reservation.html">Reservation</a></li>
+        <li><a href="Blogs.html">Blog</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="ContactUs.html">Contact Us</a></li>
+        <li><a href="NeedHelp.html">Help</a></li>
+        </ul>
+    </div>
+
+    <div class="main-header">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="logo.png" alt="Bookmytable">
+        <span>Never wait for your meal</span>
+    </div>
+
+    <!-- SEARCH BAR -->
+    <div class="search-box">
+        <input type="text" placeholder="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <!-- ICONS -->
+    <div class="header-icons">
+        <i class="fa-regular fa-bell"></i>
+        <i class="fa-solid fa-headset" style="cursor:pointer;" onclick="window.location.href='ContactUs.html'"></i>
+        <i class="fa-regular fa-heart" style="cursor:pointer;" onclick="window.location.href='Wishlist.html'"></i>
+        <img src="proficon.png" alt="profile">
+    </div>
+
+</div>
+</header>
+
+<!-- ABOUT US -->
+ <section class="about-section">
+    
+        <h2>About Us</h2>
+
+        <p>
+            At DineReserve we bring you a seamless dining experience by letting you
+            reserve your favorite restaurant table with just a few clicks. Whether
+            it's a romantic dinner, a family celebration or a business lunch we help
+            you skip the queue and get the best seat in the house.
+        </p>
+
+        <p>
+            With real-time availability, curated restaurant listings, and instant
+            booking confirmation, dining out has never been this convenient. Our
+            mission is simple — make every meal an occasion worth remembering.
+        </p>
+    
+    <div class="about-image">
+        <img src="CustReview.png" alt="Restaurant Interior">
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-col">
+      <h3>Company</h3>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Customer Reviews</a>
+      <a href="#">Add Your Restaurent</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Policy Info</h3>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Cookies Policy</a>
+      <a href="#">Cancellation Policy</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Cities</h3>
+      <a href="#">Chennai</a>
+      <a href="#">Banglore</a>
+      <a href="#">Hyderabad</a>
+      <a href="#">Mumbai</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Help</h3>
+      <a href="#">Booking Status</a>
+      <a href="#">Add Restaurent</a>
+    </div>
+  </div>
+
+  <hr class="footer-line">
+
+  <div class="footer-bottom">
+    <div class="bottom-col">
+      <a href="#">Restaurent in Chennai</a>
+      <a href="#">Restaurent in Pune</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Bangalore</a>
+      <a href="#">Restaurent in Kolkata</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Hyderabad</a>
+      <a href="#">Restaurent in Mumbai</a>
+    </div>
+  </div>
+</footer>
+<script>
+const currentPage = window.location.pathname.split("/").pop();
+const links = document.querySelectorAll(".top-nav ul li a");
+
+links.forEach(link => {
+  const linkPage = link.getAttribute("href");
+  if (linkPage === currentPage) {
+    link.classList.add("active");
+  }
+});
+</script>
+</body>
+</html>

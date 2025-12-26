@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+body{
+  font-style:'Poppins', sans-serif ;
+  background: #efe8da;
+
+  
+}
+.header {
+    font-style: 'Poppins', sans-serif;
+    
+}
+
+/* TOP NAV */
+.top-nav {
+    background:  #B89C65;
+    padding: 14px 0;
+}
+
+.top-nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.top-nav li {
+    cursor: pointer;
+}
+
+.top-nav .active {
+    font-weight: 600;
+}
+
+.main-header {
+    display: flex;              /* 🔥 this is the fix */
+    align-items: center;        /* vertical alignment */
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #ddd1bd;
+    margin-bottom: 20px;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logo img {
+    width: 180px;
+}
+
+.logo span {
+    font-size: 13px;
+    color: #555;
+}
+
+/* SEARCH */
+.search-box {
+    position: relative;
+     margin: 0 40px;
+    width: 800px;          
+    height: 80px; 
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 50px 14px 25px;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    height:70px;
+    
+}
+
+.search-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.search-box input::placeholder {
+    color: black;
+    opacity: 1; /* important for Chrome */
+}
+
+/* ICONS */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header-icons i {
+    font-size: 30px;
+    color: #b5985a;
+    cursor: pointer;
+}
+
+.header-icons img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+
+.blog-section {
+  width: 100%;
+  background: #fff;
+  margin-top: 40px;
+}
+
+/* HEADER STRIP */
+.blog-header {
+  text-align: center;
+  padding: 2px 10px;
+  background: #efe8da
+}
+
+.blog-header h2 {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+}
+
+.blog-header p {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #444;
+  font-family: 'Playfair Display', serif;
+}
+
+/* CARD */
+.blog-card {
+  width:100%;
+  margin: 0 auto;
+  background: #fff;
+}
+
+/* IMAGE */
+.blog-card img {
+  width: 100vw;
+  height: auto;
+  display: block;
+  
+}
+
+/* CONTENT */
+.blog-content {
+  padding: 20px 25px;
+}
+
+.blog-content p {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.6;
+  color: black;
+  word-spacing: 2px;
+  font-family: 'Poppins', serif;
+  margin-bottom: 20px;
+}
+
+/* FOOTER */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  background-color: #B89C65; /* same gold shade */
+  color: #fff;
+  padding: 60px 80px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-col h3 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.footer-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-line {
+  border: none;
+  height: 2px;
+  background: #fff;
+  margin: 50px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.bottom-col a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.top-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+       
+}
+
+.top-nav ul li a.active {
+    color: #000;       /* active black */
+    font-weight: 600;
+}
+/* ===========================
+   TABLET VIEW (≤1024px)
+=========================== */
+@media (max-width: 1024px) {
+
+  /* Top Nav */
+  .top-nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 20px;
+  }
+
+  /* Header */
+  .main-header {
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .search-box {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .search-box input {
+    height: 60px;
+    font-size: 18px;
+  }
+
+  /* Blog Image */
+  .blog-card img {
+    width: 100%;
+  }
+
+  /* Blog Text */
+  .blog-content p {
+    font-size: 20px;
+  }
+}
+
+
+/* ===========================
+   MOBILE VIEW (≤768px)
+=========================== */
+@media (max-width: 768px) {
+
+  /* Top Nav */
+  .top-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+  }
+
+  /* Logo */
+  .logo img {
+    width: 140px;
+  }
+
+  .logo span {
+    font-size: 12px;
+  }
+
+  /* Search */
+  .search-box input {
+    font-size: 16px;
+    padding: 12px 45px 12px 20px;
+  }
+
+  /* Header Icons */
+  .header-icons {
+    gap: 15px;
+  }
+
+  .header-icons i {
+    font-size: 24px;
+  }
+
+  .header-icons img {
+    width: 42px;
+    height: 42px;
+  }
+
+  /* Blog Header */
+  .blog-header h2 {
+    font-size: 24px;
+  }
+
+  .blog-header p {
+    font-size: 20px;
+  }
+
+  /* Blog Content */
+  .blog-content {
+    padding: 15px;
+  }
+
+  .blog-content p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 25px;
+  }
+
+  .footer-col h3 {
+    font-size: 22px;
+  }
+
+  .footer-col a,
+  .bottom-col a {
+    font-size: 18px;
+  }
+}
+
+
+/* ===========================
+   SMALL MOBILE (≤480px)
+=========================== */
+@media (max-width: 480px) {
+
+  .search-box input {
+    height: 50px;
+    font-size: 15px;
+  }
+
+  .blog-header h2 {
+    font-size: 22px;
+  }
+
+  .blog-header p {
+    font-size: 18px;
+  }
+
+  .blog-content p {
+    font-size: 16px;
+  }
+}
+</style>
+</head>
+<body>
+    <header class="header">
+
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <ul>
+        <li><a href="HomePage copy.html">Home</a></li>
+        <li><a href="Reservation.html">Reservation</a></li>
+        <li><a href="Blogs.html">Blog</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="ContactUs.html">Contact Us</a></li>
+        <li><a href="NeedHelp.html">Help</a></li>
+        </ul>
+    </div>
+
+    <div class="main-header">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="logo.png" alt="Bookmytable">
+        <span>Never wait for your meal</span>
+    </div>
+
+    <!-- SEARCH BAR -->
+    <div class="search-box">
+        <input type="text" placeholder="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <!-- ICONS -->
+    <div class="header-icons">
+        <i class="fa-regular fa-bell"></i>
+        <i class="fa-solid fa-headset" style="cursor:pointer;" onclick="window.location.href='ContactUs.html'"></i>
+        <i class="fa-regular fa-heart" style="cursor:pointer;" onclick="window.location.href='Wishlist.html'"></i>
+        <img src="proficon.png" alt="profile">
+    </div>
+
+</div>
+</header>
+
+<section class="blog-section">
+  <div class="blog-header">
+    <h2>From Our Blog</h2>
+    <p>Stay Inspired with Dining Trends Tips & News</p>
+  </div>
+
+  <div class="blog-card">
+    <img src="Blogs.png" alt="Dining Blog Image"></div>
+
+    <div class="blog-content">
+      <p>
+        Discover the most loved spots to impress your partner and reserve your
+        perfect table in seconds<br>Tips to enjoy eating out without compromising
+        your health goals. Beat the crowd, avoid disappointment here's why early<br>
+        reservations matter more than ever. We've handpicked restaurants with
+        great food and fun vibes for all ages. Explore venues that<br> offer the best
+        ambiance, special menus, and unforgettable memories.
+      </p>
+    </div>
+  
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-col">
+      <h3>Company</h3>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Customer Reviews</a>
+      <a href="#">Add Your Restaurent</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Policy Info</h3>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Cookies Policy</a>
+      <a href="#">Cancellation Policy</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Cities</h3>
+      <a href="#">Chennai</a>
+      <a href="#">Banglore</a>
+      <a href="#">Hyderabad</a>
+      <a href="#">Mumbai</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Help</h3>
+      <a href="#">Booking Status</a>
+      <a href="#">Add Restaurent</a>
+    </div>
+  </div>
+
+  <hr class="footer-line">
+
+  <div class="footer-bottom">
+    <div class="bottom-col">
+      <a href="#">Restaurent in Chennai</a>
+      <a href="#">Restaurent in Pune</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Bangalore</a>
+      <a href="#">Restaurent in Kolkata</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Hyderabad</a>
+      <a href="#">Restaurent in Mumbai</a>
+    </div>
+  </div>
+</footer>
+<script>
+const currentPage = window.location.pathname.split("/").pop();
+const links = document.querySelectorAll(".top-nav ul li a");
+
+links.forEach(link => {
+  const linkPage = link.getAttribute("href");
+  if (linkPage === currentPage) {
+    link.classList.add("active");
+  }
+});
+</script>
+</body>
+</html>
