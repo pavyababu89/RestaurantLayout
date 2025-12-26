@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body{
+  font-style:'Poppins', sans-serif ;
+  background: #ddd1bd;
+}
+.header {
+    font-style: 'Poppins', sans-serif;
+    
+}
+
+/* TOP NAV */
+.top-nav {
+    background:  #B89C65;
+    padding: 14px 0;
+}
+
+.top-nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.top-nav li {
+    cursor: pointer;
+}
+
+.top-nav .active {
+    font-weight: 600;
+}
+
+.main-header {
+    display: flex;              /* 🔥 this is the fix */
+    align-items: center;        /* vertical alignment */
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #ddd1bd;
+    margin-bottom: 20px;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logo img {
+    width: 180px;
+}
+
+.logo span {
+    font-size: 13px;
+    color: #555;
+}
+
+/* SEARCH */
+.search-box {
+    position: relative;
+     margin: 0 40px;
+    width: 800px;          
+    height: 80px; 
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 50px 14px 25px;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    height:70px;
+    
+}
+
+.search-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.search-box input::placeholder {
+    color: black;
+    opacity: 1; /* important for Chrome */
+}
+
+/* ICONS */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header-icons i {
+    font-size: 30px;
+    color: #b5985a;
+    cursor: pointer;
+}
+
+.header-icons img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+.register-btn {
+  padding: 12px 26px;
+  background: #B89C65;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  background: #b49455;
+}
+/* HERO SECTION */
+.hero-section {
+    width: 100%;
+    height: 420px;
+    background: url("Heroimg.png") center center / cover no-repeat;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Dark soft overlay */
+.hero-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-text h1 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+    letter-spacing: 3px;
+}
+.hero-text h2 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 8px; 
+    letter-spacing: 3px;  /* 👈 controls gap */
+}
+/* EXPLORE */
+.city-section {
+  background-color: #f7efe3;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.city-section h2 {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+/* SLIDER */
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  gap: 30px;
+  animation: backAndForth 5s ease-in-out infinite alternate;
+}
+.slider-track a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.city-card img {
+  width: 380px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+/* START → RIGHT, THEN LEFT */
+@keyframes backAndForth {
+  from {
+    transform: translateX(-30%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+
+/* CITY CARD */
+ .city-card {
+  min-width: 380px;   /* same card width */
+  text-align: center;
+}
+
+.city-card img {
+  width: 380px;       /* SAME width */
+  height: 260px;      /* SAME height */
+  object-fit: cover;  /* crop without stretching */
+  border-radius: 20px;
+  display: block;
+}
+
+.city-card p {
+  margin-top: 15px;
+  font-size: 22px;
+  font-weight: 500;
+}
+.reverse {
+  animation-direction: reverse;
+}
+
+
+/* HOW IT WORKS */
+.how-it-works {
+  background-color: #f7efe3;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.how-it-works h2 {
+  font-size: 34px;
+  margin-bottom: 100px;
+
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between; /* 🔥 spread across full width */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.step {
+  text-align: center;
+  color: #b08a4a;
+}
+
+.step i {
+  font-size: 55px;
+  margin-bottom: 12px;
+}
+
+.step p {
+  font-size: 26px;
+  font-weight: 600;
+  color: black;
+}
+@media (max-width: 768px) {
+  .step i {
+    font-size: 34px;
+  }
+}
+/* CustomerReviews */
+.review-hero {
+  background: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url("CustReview.png") center/cover no-repeat;
+  height: 320px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 40px;
+  margin-top: 60px;
+}
+
+.review-hero h2 {
+  color: white;
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+.review-content {
+  background-color: #b79c6a;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 60px 40px;
+  text-align: center;
+}
+.review-item img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.review-item h4 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 6px;
+  font-style: 'Poppins';
+  letter-spacing: 2px;
+}
+
+.stars {
+  color: #eaff5a;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.review-item p {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .review-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+/* Map contact */
+
+body {
+  background: #f7efe2;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* SECTION */
+.newsletter-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 80px;
+  gap: 60px;
+}
+
+/* LEFT */
+.newsletter-left {
+  flex: 1;
+}
+
+.map-image {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.map-image img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+
+/* CONTACT INFO OVER MAP */
+.map-contact {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #b49455;
+  padding: 14px 5px;
+  font-size: 18px;
+}
+
+.map-contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0;
+}
+
+.map-contact i {
+  color: black;
+}
+
+/* RIGHT */
+.newsletter-right {
+  flex: 1;
+}
+
+.newsletter-right h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* INPUT + BUTTON */
+.subscribe-box {
+  display: flex;
+  gap: 20px;
+}
+
+.subscribe-box input {
+  flex: 1;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+.subscribe-box button {
+  padding: 16px 36px;
+  border: none;
+  border-radius: 12px;
+  background: #B89C65;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.subscribe-box button:hover {
+  background: #b49455;
+}
+
+/* FOOTER */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  background-color: #B89C65; /* same gold shade */
+  color: #fff;
+  padding: 60px 80px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-col h3 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.footer-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-line {
+  border: none;
+  height: 2px;
+  background: #fff;
+  margin: 50px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.bottom-col a:hover {
+  text-decoration: underline;
+}
+
+/* MODAL BACKDROP */
+.modal {
+  display: none;            /* hidden initially */
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+/* MODAL BOX */
+.modal-content {
+  background: #fff;
+  width: 520px;
+  padding: 45px 50px;
+  border-radius: 14px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+@media (min-width: 768px) {
+  .modal-content {
+    width: 560px;
+  }
+}
+
+.modal-content h2 {
+  margin-bottom: 25px;
+}
+
+/* INPUTS */
+.modal-content input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 18px;
+  border-radius: 25px;
+  border: 1px solid #c9aa6a;
+  font-size: 16px;
+}
+/* Modal bigger and side by side */
+.modal-signup {
+  display: flex;
+  width: 700px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* Left side image */
+.modal-left {
+  flex: 1;
+  min-width: 260px;
+  background: #f7efe3; /* light background */
+}
+
+.modal-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+/* Right side form area */
+.modal-right {
+  flex: 1.2;
+  padding: 40px 50px;
+  background: white;
+  text-align: left;
+  position: relative;
+}
+
+/* Titles */
+.modal-right h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Inputs */
+.modal-right input {
+  width: 100%;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  border: 1px solid #c9aa6a;
+  font-size: 16px;
+}
+
+/* Buttons */
+.modal-right .login-btn {
+  width: 100%;
+  padding: 14px 0;
+  font-size: 20px;
+  background: #b89c65;
+  border: none;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Bottom text */
+.bottom-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.bottom-text span {
+  color: #b89c65;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* CLOSE */
+ .close-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 32px; /* bigger */
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* LOGIN ROW */
+.login-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-btn {
+  background: #b89c65;
+  border: none;
+  padding: 10px 36px;
+  color: white;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.forgot {
+  font-size: 14px;
+  color: #333;
+}
+
+/* DIVIDER */
+.divider {
+  margin: 30px 0 20px;
+  position: relative;
+}
+
+.divider span {
+  background: #fff;
+  padding: 0 10px;
+  font-weight: 500;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #ccc;
+  z-index: -1;
+}
+
+/* SOCIAL */
+.social-icons {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #000;
+  padding: 12px;
+  border-radius: 30px;
+}
+
+.social-icons i {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* BOTTOM TEXT */
+.bottom-text {
+  margin-top: 20px;
+}
+
+.bottom-text span {
+  color: #b89c65;
+  cursor: pointer;
+  font-weight: 500;
+}
+.logout-icon {
+  font-size: 35px;
+  background: #f7efe3;
+  padding: 10px;
+  border-radius: 50%;
+}
+.top-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+       
+}
+
+.top-nav ul li a.active {
+    color: #000;       /* active black */
+    font-weight: 600;
+}
+.slider-track a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+/* =========================
+   TABLET (max-width: 1024px)
+========================= */
+@media (max-width: 1024px) {
+
+  .main-header {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .search-box {
+    width: 100%;
+    margin: 0;
+  }
+
+  .search-box input {
+    height: 60px;
+    font-size: 18px;
+  }
+
+  .steps {
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .step p {
+    font-size: 22px;
+  }
+
+  .review-content {
+    gap: 30px;
+  }
+
+  .footer {
+    padding: 40px;
+  }
+}
+
+
+/* =========================
+   MOBILE (max-width: 768px)
+========================= */
+@media (max-width: 768px) {
+
+  /* TOP NAV */
+  .top-nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  /* HEADER */
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .search-box input {
+    height: 55px;
+    font-size: 16px;
+  }
+
+  .header-icons {
+    justify-content: center;
+  }
+
+  /* HERO */
+  .hero-section {
+    height: 300px;
+  }
+
+  .hero-text h1 {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+
+  .hero-text h2 {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  /* SLIDER */
+  .city-card {
+    min-width: 260px;
+  }
+
+  .city-card img {
+    width: 260px;
+    height: 180px;
+  }
+
+  .city-card p {
+    font-size: 18px;
+  }
+
+  /* HOW IT WORKS */
+  .steps {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .step i {
+    font-size: 40px;
+  }
+
+  .step p {
+    font-size: 20px;
+  }
+
+  /* REVIEWS */
+  .review-content {
+    flex-direction: column;
+    gap: 35px;
+    padding: 40px 20px;
+  }
+
+  /* NEWSLETTER */
+  .newsletter-section {
+    padding: 30px 20px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 30px 20px;
+  }
+
+  .footer-col h3 {
+    font-size: 22px;
+  }
+
+  .footer-col a {
+    font-size: 18px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE (max-width: 480px)
+========================= */
+@media (max-width: 480px) {
+
+  .hero-text h1 {
+    font-size: 18px;
+  }
+
+  .hero-text h2 {
+    font-size: 16px;
+  }
+
+  .register-btn {
+    font-size: 16px;
+    padding: 10px 22px;
+  }
+
+  .modal-signup {
+    width: 95%;
+  }
+
+  .modal-right h2 {
+    font-size: 22px;
+  }
+
+  .modal-right input {
+    font-size: 14px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+  }
+}
+
+</style>
+
+<body>
+    <header class="header">
+
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <ul>
+        <li><a href="HomePage copy.html">Home</a></li>
+        <li><a href="Reservation.html">Reservation</a></li>
+        <li><a href="Blogs.html">Blog</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="ContactUs.html">Contact Us</a></li>
+        <li><a href="NeedHelp.html">Help</a></li>
+        </ul>
+    </div>
+
+    <div class="main-header">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="logo.png" alt="Bookmytable">
+        <span>Never wait for your meal</span>
+    </div>
+
+    <!-- SEARCH BAR -->
+    <div class="search-box">
+        <input type="text" placeholder="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <!-- ICONS -->
+    <div class="header-icons" id="headerIcons" style="display:none;">
+    <i class="fa-regular fa-bell"></i>
+    <i class="fa-solid fa-headset" style="cursor:pointer;" onclick="window.location.href='ContactUs.html'"></i>
+    <i class="fa-regular fa-heart" style="cursor:pointer;" onclick="window.location.href='Wishlist.html'"></i>
+    <img src="proficon.png" alt="profile">
+</div>
+
+<button class="register-btn" id="registerBtn">Register</button>
+<i class="fa-solid fa-right-from-bracket logout-icon" id="logoutBtn" title="Logout"></i>
+
+</div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero-section">
+    <div class="hero-overlay">
+        <div class="hero-text">
+            <h1>Book Table at your favourite restaurant and</h1>
+            <h2>get served instantly</h2>
+        </div>
+    </div>
+</section>
+
+<!-- EXPLORE RESTAURANTS -->
+<section class="city-section">
+  <h2>Explore restaurant in  your city</h2>
+
+  <div class="slider">
+     <div class="slider-track" id="sliderTrack">
+      <!-- CITY CARD 1 -->
+      <a href="ExploreCHBM.html">
+      <div class="city-card">
+        <img src="Mumbai.avif" alt="Mumbai">
+        <p>Mumbai</p>
+      </div></a>
+
+      <!-- CITY CARD 2 -->
+      <a href="ExploreCHBM.html"> 
+      <div class="city-card">
+        <img src="Hyd.webp" alt="Hyd">
+        <p>Hyderabad</p>
+      </div></a>
+
+      <!-- CITY CARD 3 -->
+       <a href="ExploreCHBM.html">
+      <div class="city-card">
+        <img src="Chennai.jfif" alt="Chennai">
+        <p>Hyderabad</p>
+      </div></a>
+
+      <!-- CITY CARD 4 -->
+       <a href="ExploreCHBM.html">
+      <div class="city-card">
+        <img src="Bang.avif" alt="Bangalore">
+        <p>Bangalore</p>
+      </div></a>
+
+      <!-- DUPLICATE SAME CARDS FOR SMOOTH LOOP -->
+       <a href="ExploreCHBM.html">
+      <div class="city-card">
+        <img src="Mumbai.avif" alt="Mumbai">
+        <p>Mumbai</p>
+      </div></a>
+      
+      <a href="ExploreCHBM.html">
+      <div class="city-card">
+        <img src="Hyd.webp" alt="Hyd">
+        <p>Hyderabad</p>
+      </div></a>
+      
+      <a href="ExploreCHBM.html">
+      <div class="city-card">
+        <img src="Chennai.jfif" alt="Chennai">
+        <p>Hyderabad</p>
+      </div></a>
+
+      <a href="ExploreCHBM.html">
+      <div class="city-card">
+        <img src="Bang.avif" alt="Bangalore">
+        <p>Bangalore</p>
+      </div></a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+ <section class="how-it-works">
+  <h2>How it works</h2>
+
+  <div class="steps">
+    <div class="step">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <p>Search restaurant</p>
+    </div>
+
+    <div class="step">
+      <i class="fa-regular fa-calendar"></i>
+      <p>Select date/time</p>
+    </div>
+
+    <div class="step">
+      <i class="fa-solid fa-chair"></i>
+      <p>Reserve your table</p>
+    </div>
+
+    <div class="step">
+      <i class="fa-solid fa-utensils"></i>
+      <p>Get served instantly</p>
+    </div>
+  </div>
+</section>
+
+<!-- CustomerReviews -->
+
+<!-- TOP IMAGE SECTION -->
+<section class="review-hero">
+  <h2>Customer Reviews</h2>
+</section>
+
+<!-- BOTTOM REVIEW CONTENT -->
+<section class="review-content">
+  <div class="review-item">
+    <img src="Aman.png" alt="Aman">
+    <h4>Aman p.</h4>
+    <div class="stars">★★★★★</div>
+    <p>Great and excellent service</p>
+  </div>
+
+  <div class="review-item">
+    <img src="David.png" alt="David">
+    <h4>David.p</h4>
+    <div class="stars">★★★★★</div>
+    <p>Great and excellent service</p>
+  </div>
+
+  <div class="review-item">
+    <img src="Gopi.png" alt="Gopi">
+    <h4>Gopi.p</h4>
+    <div class="stars">★★★★★</div>
+    <p>Flexible Service</p>
+  </div>
+</section>
+
+<!-- Contact map -->
+ <section class="newsletter-section">
+
+  <!-- LEFT SIDE -->
+  <div class="newsletter-left">
+    <div class="map-image">
+      <img src="Map.png" alt="Map">
+
+      <div class="map-contact">
+        <p><i class="fa-solid fa-phone"></i> (123) 8940-985498</p>
+        <p><i class="fa-solid fa-envelope"></i> info@bookmytable.com</p>
+        <p><i class="fa-solid fa-location-dot"></i> Chennai 54375387</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="newsletter-right">
+    <h2>Get offers in Your Inbox</h2>
+
+    <div class="subscribe-box">
+      <input type="email" placeholder="Enter your mail">
+      <button>Subscribe</button>
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-col">
+      <h3>Company</h3>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Customer Reviews</a>
+      <a href="#">Add Your Restaurent</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Policy Info</h3>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Cookies Policy</a>
+      <a href="#">Cancellation Policy</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Cities</h3>
+      <a href="#">Chennai</a>
+      <a href="#">Banglore</a>
+      <a href="#">Hyderabad</a>
+      <a href="#">Mumbai</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Help</h3>
+      <a href="#">Booking Status</a>
+      <a href="#">Add Restaurent</a>
+    </div>
+  </div>
+
+  <hr class="footer-line">
+
+  <div class="footer-bottom">
+    <div class="bottom-col">
+      <a href="#">Restaurent in Chennai</a>
+      <a href="#">Restaurent in Pune</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Bangalore</a>
+      <a href="#">Restaurent in Kolkata</a>
+    </div>
+
+    <div class="bottom-col">
+      <a href="#">Restaurent in Hyderabad</a>
+      <a href="#">Restaurent in Mumbai</a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="registerModal">
+  <div class="modal-content modal-signup">
+    <span class="close-btn" id="closeModal">&times;</span>
+
+    <!-- LEFT IMAGE -->
+    <div class="modal-left">
+      <img src="CustReview.png" alt="Restaurant Image" />
+    </div>
+
+    <!-- RIGHT SIDE: LOGIN & SIGNUP FORMS -->
+    <div class="modal-right">
+
+      <!-- LOGIN FORM -->
+      <div id="loginForm">
+        <h2>Register Free !</h2>
+
+        <input type="email" placeholder="Enter your e-mail">
+        <input type="password" placeholder="Password">
+
+        <button class="login-btn" id="loginBtn">Login</button>
+
+        <p class="bottom-text">
+          Don’t have an account?
+          <span id="showSignup">Create New Account</span>
+        </p>
+      </div>
+
+      <!-- SIGNUP FORM -->
+      <div id="signupForm" style="display:none;">
+        <h2>Sign Up</h2>
+
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+
+        <button class="login-btn" id="signupBtn">Sign Up</button>
+
+        <p class="bottom-text">
+          Already have an account?
+          <span id="showLogin">Log in</span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const modal = document.getElementById("registerModal");
+  const registerBtn = document.getElementById("registerBtn");
+  const closeModal = document.getElementById("closeModal");
+
+  const loginForm = document.getElementById("loginForm");
+  const signupForm = document.getElementById("signupForm");
+
+  const showSignup = document.getElementById("showSignup");
+  const showLogin = document.getElementById("showLogin");
+
+  const loginBtn = document.getElementById("loginBtn");
+  const signupBtn = document.getElementById("signupBtn");
+
+  const headerIcons = document.getElementById("headerIcons");
+  const logoutBtn = document.getElementById("logoutBtn");
+
+  /* ---------- OPEN MODAL ---------- */
+  registerBtn.onclick = () => {
+    modal.style.display = "flex";
+    loginForm.style.display = "block";
+    signupForm.style.display = "none";
+  };
+
+  /* ---------- CLOSE MODAL ---------- */
+  closeModal.onclick = () => modal.style.display = "none";
+
+  /* ---------- SWITCH FORMS ---------- */
+  showSignup.onclick = () => {
+    loginForm.style.display = "none";
+    signupForm.style.display = "block";
+  };
+
+  showLogin.onclick = () => {
+    signupForm.style.display = "none";
+    loginForm.style.display = "block";
+  };
+
+  /* ---------- LOGIN ---------- */
+  loginBtn.onclick = () => {
+    localStorage.setItem("isLoggedIn", "true");
+    modal.style.display = "none";
+    registerBtn.style.display = "none";
+    headerIcons.style.display = "flex";
+  };
+
+  /* ---------- SIGNUP ---------- */
+  signupBtn.onclick = () => {
+    alert("Signup successful! Please login.");
+    signupForm.style.display = "none";
+    loginForm.style.display = "block";
+  };
+
+  /* ---------- LOGOUT ---------- */
+  logoutBtn.onclick = () => {
+    localStorage.removeItem("isLoggedIn");
+    location.reload();
+  };
+
+  /* ---------- ON PAGE LOAD ---------- */
+  if (localStorage.getItem("isLoggedIn") === "true") {
+    registerBtn.style.display = "none";
+    headerIcons.style.display = "flex";
+  } else {
+    registerBtn.style.display = "block";
+    headerIcons.style.display = "none";
+  }
+
+});
+// ===== AUTO FILL FOR LOGIN FORM =====
+const loginEmail = document.querySelector('#loginForm input[type="email"]');
+const loginPass  = document.querySelector('#loginForm input[type="password"]');
+
+loginEmail.addEventListener("focus", () => {
+  loginEmail.value = "amjaann@gmail.com";
+});
+
+loginPass.addEventListener("focus", () => {
+  loginPass.value = "password123";
+});
+
+
+// ===== AUTO FILL FOR SIGNUP FORM =====
+const signupName  = document.querySelector('#signupForm input[type="text"]');
+const signupEmail = document.querySelector('#signupForm input[type="email"]');
+const signupPass  = document.querySelector('#signupForm input[type="password"]');
+
+signupName.addEventListener("focus", () => {
+  signupName.value = "Amjath Althaf";
+});
+
+signupEmail.addEventListener("focus", () => {
+  signupEmail.value = "amjaann@gmail.com";
+});
+
+signupPass.addEventListener("focus", () => {
+  signupPass.value = "password123";
+});
+const currentPage = window.location.pathname.split("/").pop();
+const links = document.querySelectorAll(".top-nav ul li a");
+
+links.forEach(link => {
+  const linkPage = link.getAttribute("href");
+  if (linkPage === currentPage) {
+    link.classList.add("active");
+  }
+});
+</script>
+
+</body>
+</html>
+
+
